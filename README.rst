@@ -2,7 +2,7 @@
 stravapi
 ==========
 
-A portable RestAPI for Strava
+A portable RestAPI for Strava.
 
 
 * Documentation: https://stravapi.readthedocs.org/en/latest
@@ -11,4 +11,11 @@ A portable RestAPI for Strava
 Project Features
 ================
 
-* TODO
+This is a RestAPI for Strava made with Hug_. This is for learning purposes and
+it also adds some useful endpoints not supported by native Strava API.
+
+Check out the installation_ instructions.
+
+.. _Hug: http://www.hug.rest/
+.. _installation: https://stravapi.readthedocs.io/en/latest/installation.html
+
