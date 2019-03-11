@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# File: test_strava_api.py
+# File: stravapi.py
 #
 # Copyright 2019 Oriol Fabregas
 #
@@ -18,16 +18,17 @@
 #
 
 """
-test_strava_api
-----------------------------------
-Tests for `strava_api` module.
+Main code for stravapi
 
 .. _Google Python Style Guide:
    http://google.github.io/styleguide/pyguide.html
 
 """
 
-from betamax.fixtures import unittest
+import logging
+import hug
+from client import Client
+from operator import attrgetter
 
 __author__ = '''Oriol Fabregas <fabregas.oriol@gmail.com>'''
 __docformat__ = '''google'''
@@ -40,20 +41,36 @@ __email__ = '''<fabregas.oriol@gmail.com>'''
 __status__ = '''Development'''  # "Prototype", "Development", "Production".
 
 
-class TestStrava_api(unittest.BetamaxTestCase):
+# This is the main prefix used for logging
+LOGGER_BASENAME = '''stravapi'''
+LOGGER = logging.getLogger(LOGGER_BASENAME)
+LOGGER.addHandler(logging.NullHandler())
 
-    def setUp(self):
-        """
-        Test set up
 
-        This is where you can setup things that you use throughout the tests. This method is called before every test.
-        """
-        pass
+client = Client()
 
-    def tearDown(self):
-        """
-        Test tear down
 
-        This is where you should tear down what you've setup in setUp before. This method is called after every test.
-        """
-        pass
+@hug.get(examples='activity_type=Ride&number=5')
+@hug.local()
+def activities(activity_type: hug.types.text, number: hug.types.number):
+    """
+    Gets the max number of activities sorted by distance
+
+    Args:
+        activity_type: string
+        number: integer
+
+    Returns: list of dictionaries
+
+    """
+    activity_by_type = sorted([activity for activity in client.activities
+                               if activity.type == activity_type.capitalize()],
+                              key=attrgetter('distance.num'),
+                              reverse=True)
+    longest_activities = []
+    for activity in activity_by_type[:number]:
+        _activities = {}
+        _activities[activity.name] = activity.distance.num
+        longest_activities.append(_activities)
+    return longest_activities
+

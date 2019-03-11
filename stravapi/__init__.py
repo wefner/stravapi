@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# File: strava_apiexceptions.py
+# File: __init__.py
 #
 # Copyright 2019 Oriol Fabregas
 #
@@ -18,19 +18,25 @@
 #
 
 """
-Custom exception code for strava_api
+stravapi package
+
+Import all parts from stravapi here
 
 .. _Google Python Style Guide:
    http://google.github.io/styleguide/pyguide.html
-
 """
+from ._version import __version__
+from .client import Client
 
 __author__ = '''Oriol Fabregas <fabregas.oriol@gmail.com>'''
 __docformat__ = '''google'''
 __date__ = '''01-03-2019'''
 __copyright__ = '''Copyright 2019, Oriol Fabregas'''
-__credits__ = ["Oriol Fabregas"]
 __license__ = '''Apache Software License 2.0'''
 __maintainer__ = '''Oriol Fabregas'''
 __email__ = '''<fabregas.oriol@gmail.com>'''
 __status__ = '''Development'''  # "Prototype", "Development", "Production".
+
+# This is to 'use' the module(s), so lint doesn't complain
+assert __version__
+assert client

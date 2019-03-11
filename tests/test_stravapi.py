@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# File: __init__.py
+# File: test_stravapi.py
 #
 # Copyright 2019 Oriol Fabregas
 #
@@ -18,25 +18,42 @@
 #
 
 """
-strava_api package
-
-Import all parts from strava_api here
+test_stravapi
+----------------------------------
+Tests for `stravapi` module.
 
 .. _Google Python Style Guide:
    http://google.github.io/styleguide/pyguide.html
+
 """
-from ._version import __version__
-from .client import Client
+
+from betamax.fixtures import unittest
 
 __author__ = '''Oriol Fabregas <fabregas.oriol@gmail.com>'''
 __docformat__ = '''google'''
 __date__ = '''01-03-2019'''
 __copyright__ = '''Copyright 2019, Oriol Fabregas'''
+__credits__ = ["Oriol Fabregas"]
 __license__ = '''Apache Software License 2.0'''
 __maintainer__ = '''Oriol Fabregas'''
 __email__ = '''<fabregas.oriol@gmail.com>'''
 __status__ = '''Development'''  # "Prototype", "Development", "Production".
 
-# This is to 'use' the module(s), so lint doesn't complain
-assert __version__
-assert client
+
+class TestStravapi(unittest.BetamaxTestCase):
+
+    def setUp(self):
+        """
+        Test set up
+
+        This is where you can setup things that you use throughout the tests. This method is called before every test.
+        """
+        pass
+
+    def tearDown(self):
+        """
+        Test tear down
+
+        This is where you should tear down what you've setup in setUp before. This method is called after every test.
+        """
+        pass

@@ -31,7 +31,10 @@ twine = "~=1.12.1"
 coloredlogs = "~=10.0"
 emoji = "~=0.5.1"
 
+dataclasses = "*"
 
 [packages]
 
 coloredlogs = "~=10.0"
+pystrava = "*"
+hug = "*"

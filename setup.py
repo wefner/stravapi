@@ -38,21 +38,21 @@ version = open('.VERSION').read()
 
 
 setup(
-    name='''strava_api''',
+    name='''stravapi''',
     version=version,
     description='''A portable RestAPI for Strava''',
     long_description=readme + '\n\n' + history,
     author='''Oriol Fabregas''',
     author_email='''fabregas.oriol@gmail.com''',
-    url='''https://github.com/wefner/strava_api''',
+    url='''https://github.com/wefner/stravapi''',
     packages=find_packages(where='.', exclude=('tests', 'hooks', '_CI*')),
-    package_dir={'''strava_api''':
-                 '''strava_api'''},
+    package_dir={'''stravapi''':
+                 '''stravapi'''},
     include_package_data=True,
     install_requires=requirements,
     license='Apache Software License 2.0',
     zip_safe=False,
-    keywords='''strava_api ''',
+    keywords='''stravapi ''',
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',

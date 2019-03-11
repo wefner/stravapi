@@ -3,7 +3,7 @@ Usage
 =====
 
 
-To develop on strava_api:
+To develop on stravapi:
 
 .. code-block:: bash
 
@@ -34,9 +34,9 @@ To develop on strava_api:
     _CI/scripts/document.py
 
 
-To use strava_api in a project:
+To use stravapi in a project:
 
 .. code-block:: python
 
-    from strava_api import Strava_api
-    strava_api = Strava_api()
+    from stravapi import Strava_api
+    stravapi = Strava_api()

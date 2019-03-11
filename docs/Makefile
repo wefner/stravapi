@@ -85,17 +85,17 @@ qthelp:
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
 	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/strava_api.qhcp"
+	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/stravapi.qhcp"
 	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/strava_api.qhc"
+	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/stravapi.qhc"
 
 devhelp:
 	$(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(BUILDDIR)/devhelp
 	@echo
 	@echo "Build finished."
 	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/strava_api"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/strava_api"
+	@echo "# mkdir -p $$HOME/.local/share/devhelp/stravapi"
+	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/stravapi"
 	@echo "# devhelp"
 
 epub:
