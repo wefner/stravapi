@@ -27,7 +27,7 @@ Main code for stravapi
 
 import logging
 import hug
-from client import Client
+from .client import Client
 from operator import attrgetter
 
 __author__ = '''Oriol Fabregas <fabregas.oriol@gmail.com>'''
@@ -54,7 +54,7 @@ client = Client()
 @hug.local()
 def activities(activity_type: hug.types.text, number: hug.types.number):
     """
-    Gets the max number of activities sorted by distance
+    Gets the number of longest activities by a given type.
 
     Args:
         activity_type: string
