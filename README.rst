@@ -1,3 +1,7 @@
+.. image:: https://readthedocs.org/projects/stravapi/badge/?version=latest
+:target: https://stravapi.readthedocs.io/en/latest/?badge=latest
+:alt: Documentation Status
+
 ==========
 stravapi
 ==========
